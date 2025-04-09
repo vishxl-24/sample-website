@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/my-angular-project
+    overwrite: yes
+
+hooks:
+  AfterInstall:
+    - location: deploy-scripts/install.sh
+      timeout: 180
+      runas: root
