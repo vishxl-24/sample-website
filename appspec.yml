@@ -3,10 +3,9 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-    overwrite: yes
 
 hooks:
   AfterInstall:
-    - location: deploy-scripts/install.sh
-      timeout: 180
+    - location: scripts/after_install.sh
+      timeout: 300
       runas: root
