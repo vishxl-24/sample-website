@@ -2,6 +2,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo '[{"name":"my-static-container","imageUrl":"762157732118.dkr.ecr.us-east-1.amazonaws.com/demo"}]' > imagedefinitions.json
+      - echo '[{"name":"my-static-container","imageUri":"762157732118.dkr.ecr.us-east-1.amazonaws.com/demo"}]' > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
