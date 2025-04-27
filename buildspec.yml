@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_REGION: "us-east-1" # <-- 🔥 Replace with your actual AWS Region (example: ap-south-1 for Mumbai)
+    AWS_REGION: "us-east-1" 
 
 phases:
   pre_build:
@@ -16,11 +16,11 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
   post_build:
-    commands:
-      - echo Pushing the Docker image to ECR...
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Creating imagedefinitions.json file...
-      - printf '[{"name":"Sample-April24-service-8f00pz2q","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+  commands:
+    - echo "Pushing Docker image..."
+    - docker push $REPOSITORY_URI:$IMAGE_TAG
+    - echo "Creating imagedefinitions.json..."
+    - printf '[{"name":"Sample-April24-service-8f00pz2q","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 
 artifacts:
   files:
