@@ -1,6 +1,0 @@
-[
-  {
-    "name": "my-static-container",
-    "imageUri": "762157732118.dkr.ecr.us-east-1.amazonaws.com/my-static-site:latest"
-  }
-]
